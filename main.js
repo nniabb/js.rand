@@ -2,12 +2,12 @@
 //const input = [1, 2, 3, [4, 5, [6, 7, [8, 9]]]];
 //const result = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-function flattenArray(input) {
-    return [].concat.apply([], input.map(item => Array.isArray(item) ? flattenArray(item) : item))
+function newarray(input) {
+    return [].concat.apply([], input.map(item => Array.isArray(item) ? newarray(item) : item))
 }
 
 const input = [1, 2, 3, [4, 5, [6, 7, [8, 9]]]]
-const output = flattenArray(input)
+const output = newarray(input)
 console.log(output)
 
 
@@ -32,8 +32,4 @@ function random(input) {
 const input1 = [1, 2, 3, [4, 5, [6, 7, [8, 9]]], 10, 11, 12]
 const result = random(input1)
 console.log(result)
-
-
-
-
   
